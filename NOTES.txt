@@ -86,3 +86,20 @@ DJANGO APP, PART 3:
       - http://127.0.0.1:8000/polls/1/results/  # should be OK.
       - http://127.0.0.1:8000/polls/1/vote/     # should be OK.
       - http://127.0.0.1:8000/polls/5/vote/     # should be OK at the moment.
+
+DJANGO APP, PART 4:
+
+    - First we update the detail template to include a form.
+    - We then change views.py to update the vote() view.
+    - We update/change the views.py file with a new results view.
+    - We create a results.html template.
+    - At this point, we test the site and get the following:
+        - http://127.0.0.1:8000/polls/              # All fine
+        - http://127.0.0.1:8000/polls/1/            # All fine, nice questions
+        - http://127.0.0.1:8000/polls/1/results/    # All fine with a link back that works.
+        - http://127.0.0.1:8000/polls/1/vote/       # All fine, a voting form
+        - http://127.0.0.1:8000/polls/5/            # An error, as expected (Qu 5 doesn't exist)
+
+    - It mentions something called a race condition and how to avoid it using F.
+
+    - I decided to save this part to github before moving onto the generic views section.
