@@ -1,0 +1,58 @@
+DJANGO APP, PART 1:
+
+    Definition:
+    mysite is a project and polls is an app.
+
+    To add a new app to the mysite project, we used the following technique:
+    - python manage.py startapp polls
+    - Adjust polls/views.py to include a response
+    - Adjust polls/urls.py to add a url pattern.
+    - Adjust mysite/urls.py to include the polls/urls.py
+
+DJANGO APP, PART 2:
+
+    - Adjust mysite/settings.py to specify what database we are using and the name of the database.
+    - In mysite/settings.py adjust the timezone appropriately.
+    - python manage.py migrate      # Run before setting up the tables.
+    - next we add a models.py file into the polls app, which in essence defines the database structure.
+    - In mysite/settings.py we add a reference to the PollsConfig class in polls/apps.py, by adding this
+      into the INSTALLED_APPS:
+        - 'polls.apps.PollsConfig'
+    - You can then run the following to make any migrations:
+        - python manage.py makemigrations polls
+    - The polls/migrations directory now has a migration file that you can look at.   You can also look
+      at the sql using the following:
+        - python manage.py sqlmigrate polls 0001        #0001 is the migration file.
+    - Run the following to check for any problems in your project before running migrations:
+        - python manage.py check
+    - To actually run the migration do the following:
+        - python manage.py migrate
+    - KEY - REMEMBER THE  GUIDE TO MAKING CHANGES TO OUR MODEL:
+        - Change your models (in models.py).
+        - Run python manage.py makemigrations to create migrations for those changes
+        - To analyse the SQL: python manage.py sqlmigrate polls 0001
+        - To check for problems in your project before migrating: python manage.py check
+        - Run python manage.py migrate to apply those changes to the database.
+    
+    - Next we went into the python shell and added a new question into the system using the shell.   This
+      seems important and useful to me.   You can analyse question characteristics, update the question
+      and save any changes in the shell.   I suggest you look at this command and page:
+        - python manage.py shell
+        - https://docs.djangoproject.com/en/2.2/intro/tutorial02/
+    - We then modified the models.py file to include a __str__ representation of the models.
+      Adding __str__ is important as it is used extensively in django.
+    - We then viewed these changes using python manage.py shell, again.
+    - THIS BIT ON THE SHELL IS REALLY USEFUL AS IT SHOWS YOU HOW TO ADD A QUESTION, AND CHOICES
+      TO THE DATABASE.
+    
+    - Note, at this point, I ran python manage.py makemigrations to ensure there were no migrations.
+    
+    - DJANGO Admin Site
+      This is important as there is a built in admin site for the website administrators.
+      - python manage.py createsuperuser
+      - enter a username, email address and password, eg admin, admin@blah.com, ....
+      - You can then start the server and goto the admin site using:
+        - python manage.py runserver
+        - http://127.0.0.1:8000/admin/.
+      - KEY POINT - MAKE THE POLLS APP MODIFIABLE IN THE ADMIN:
+        - adjust the polls/admin.py file.
