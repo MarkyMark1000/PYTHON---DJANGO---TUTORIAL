@@ -56,3 +56,33 @@ DJANGO APP, PART 2:
         - http://127.0.0.1:8000/admin/.
       - KEY POINT - MAKE THE POLLS APP MODIFIABLE IN THE ADMIN:
         - adjust the polls/admin.py file.
+
+DJANGO APP, PART 3:
+
+    - We are going to add the following 4 views:
+        - Question “index” page – displays the latest few questions.
+        - Question “detail” page – displays a question text, with no results but with a form to vote.
+        - Question “results” page – displays results for a particular question.
+        - Vote action – handles voting for a particular choice in a particular question.
+    
+    - We add 3 extra views to the polls/views.py file.
+    - We then wire these views into the polls app by adjusting polls/urls.py file.
+    - Then try looking at the following pages:
+      - /polls/34/
+      - /polls/34/results/
+      - /polls/34/vote/
+    - Each view needs to do one of two things, either return HttpResponse or return Http404 error.
+    - We then added a templates directory in the polls directory.   Then create another polls directory within
+      the templates directory and a file called index.html
+    - We then update the index view in polls/views.py to use this template when displaying the page.
+    - The concept of a 404 error is introduced, ie the page doesn't exist.   Try comparing the following 2 links:
+      - http://127.0.0.1:8000/polls/1/      # should be OK.
+      - http://127.0.0.1:8000/polls/5/      # should show an error
+    - IMPORTANT POINT ABOUT NAMESPACING URL'S IN THE polls/urls.py file and we adjust the polls/index.html
+    file to use the namespace, ie use 'polls:detail' instead of 'detail'.
+    - You can then test it on the standard links to ensure it is working:
+      - http://127.0.0.1:8000/polls/1/          # should be OK.
+      - http://127.0.0.1:8000/polls/5/          # should show an error
+      - http://127.0.0.1:8000/polls/1/results/  # should be OK.
+      - http://127.0.0.1:8000/polls/1/vote/     # should be OK.
+      - http://127.0.0.1:8000/polls/5/vote/     # should be OK at the moment.
