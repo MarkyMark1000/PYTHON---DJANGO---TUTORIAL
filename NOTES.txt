@@ -177,4 +177,9 @@ DJANGO APP, PART 7:
     - We then change the Question class in polls/models.py so that it can be sorted by was_published_recently
     - It adds a filter for pub date onto the side.
 
+    - Next major bit is customizing the look of the Admin site.   We add a templates directory to the core 
+      directory that contains the manage.py file.   We then adjust the DIRS option in the mysite/settings.py
+      so that it knows where to look for templates.   We then copy a django core template from under the django
+      directory structure into this directory and edit it so that id displays our site details instead.
+
 
