@@ -134,3 +134,16 @@ DJANGO APP, PART 5:
       changed, but once this was done, we could run the tests successfully with the following command:
       
       - python manage.py test polls
+
+    - In the next part, we use the shell to explore the data and error codes returned by the web browser:
+    
+      - python manage.py shell
+
+    - Currently the IndexView in polls/views.py returns polls in the future that are not published yet, 
+      so we fix that by modifying get_queryset and importing timezone.   We then test this using:
+        - http://127.0.0.1:8000/polls/              # All fine
+        - http://127.0.0.1:8000/polls/1/            # All fine, nice questions
+        - http://127.0.0.1:8000/polls/1/results/    # All fine with a link back that works.
+        - http://127.0.0.1:8000/polls/1/vote/       # All fine, a voting form
+        - http://127.0.0.1:8000/polls/2/            # This still displays when I put the date in the future.   Hmm !!
+             
