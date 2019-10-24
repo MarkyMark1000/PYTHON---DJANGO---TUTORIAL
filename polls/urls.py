@@ -2,7 +2,19 @@ from django.urls import path
 
 from . import views
 
-app_name = 'polls'
+
+# MJW:
+# This is important, it allows the use of namespaces, and hence the use of 'polls:detail' in the
+# templates directory.
+app_name = 'polls'  
+
+# MJW:
+# We use generic views in the views.py.   This is where the class inherits from something like
+# generic.listview or generic.detailview.
+# The generic views are listed differently here in a form such as:
+# <int:pk> ... views.IndexView.as_view(), views.DetailView.as_view(), ...
+# Note the use of pk instead of the input.   This is the primary key of the database.
+# views.vote would be the traditional way.
 urlpatterns = [
     # ex: /polls/
     path('', views.IndexView.as_view(), name='index'),

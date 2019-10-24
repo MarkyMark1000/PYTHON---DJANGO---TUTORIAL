@@ -2,6 +2,9 @@ from django.contrib import admin
 
 from .models import Choice, Question
 
+# MJW:
+# These classes are added to get the admin part of the Django project to represent the data
+# in an intuitive way, including primary keys etc.
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
