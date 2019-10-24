@@ -146,4 +146,8 @@ DJANGO APP, PART 5:
         - http://127.0.0.1:8000/polls/1/results/    # All fine with a link back that works.
         - http://127.0.0.1:8000/polls/1/vote/       # All fine, a voting form
         - http://127.0.0.1:8000/polls/2/            # This still displays when I put the date in the future.   Hmm !!
-             
+
+    - Suggestions for tests:
+      - a separate TestClass for each model or view
+      - a separate test method for each set of conditions you want to test
+      - test method names that describe their function
