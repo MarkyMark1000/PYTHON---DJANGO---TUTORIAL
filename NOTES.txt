@@ -151,3 +151,13 @@ DJANGO APP, PART 5:
       - a separate TestClass for each model or view
       - a separate test method for each set of conditions you want to test
       - test method names that describe their function
+
+DJANGO APP, PART 6:
+
+    - In this tutorial we add a templates/polls/style.css file and directory structure.   The index.html
+      file in the templates directory is adjusted to include the css file.   We then go to the following
+      to test the new css format:
+      - python manage.py runserver
+      - http://localhost:8000/polls/      #The text should come out green.
+    
+    - We then add a background image and re-run.
