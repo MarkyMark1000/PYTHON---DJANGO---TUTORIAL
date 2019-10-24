@@ -125,3 +125,12 @@ DJANGO APP, PART 4:
         - http://127.0.0.1:8000/polls/1/results/    # All fine with a link back that works.
         - http://127.0.0.1:8000/polls/1/vote/       # All fine, a voting form
         - http://127.0.0.1:8000/polls/5/            # An error, as expected (Qu 5 doesn't exist)
+
+DJANGO APP, PART 5:
+
+    - This is about automated testing.
+    - In the first part, we setup a class with 3 tests in the polls/tests.py file.   Originally there
+      was a problem with the first test and was_published_recently in the models.py file needed to be
+      changed, but once this was done, we could run the tests successfully with the following command:
+      
+      - python manage.py test polls
