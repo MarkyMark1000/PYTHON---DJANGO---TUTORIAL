@@ -161,3 +161,20 @@ DJANGO APP, PART 6:
       - http://localhost:8000/polls/      #The text should come out green.
     
     - We then add a background image and re-run.
+
+DJANGO APP, PART 7:
+
+    - In this tutorial it concentrates on customizing the Django's automatically generated admin site.
+    - We add a new class to admin.py which changes the order so the date comes before the text.
+    - It then uses fieldsets so that each field has a seperate title.
+    - We already have the Question model in admin, we now add Choice model into admin.
+    - We then tell it that Choice objects are edited on the Question admin page by adjusting admin.py
+      To do this, we stop registering the choice question, but create a ChoiceInLine class that is 
+      linked to the QuestionAdmin class.
+    - It then changes the choices so that they are displayed in a tabular way.   We change 
+      (admin.StackedInline)  to ...(admin.TabularInline)
+    - We then change the display of QuestionAdmin to include was_published_recently
+    - We then change the Question class in polls/models.py so that it can be sorted by was_published_recently
+    - It adds a filter for pub date onto the side.
+
+
