@@ -7,7 +7,9 @@ from django.utils import timezone
 
 from .models import Choice, Question
 
+
 # MJW: Class Representation of the Index View in the templates directory.
+
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -22,7 +24,9 @@ class IndexView(generic.ListView):
             pub_date__lte=timezone.now()
         ).order_by('-pub_date')[:5]
 
+
 # MJW: Class Representation of the Detail View in the templates directory.
+
 
 class DetailView(generic.DetailView):
     model = Question
@@ -34,13 +38,17 @@ class DetailView(generic.DetailView):
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
 
+
 # MJW: Class Representation of the Results View in the templates directory.
+
 
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
 
+
 # MJW: Function Representation of the vote.
+
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
@@ -58,4 +66,5 @@ def vote(request, question_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+        return HttpResponseRedirect(reverse('polls:results',
+                                            args=(question.id,)))

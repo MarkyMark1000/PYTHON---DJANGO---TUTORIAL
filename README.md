@@ -1,24 +1,15 @@
-Tutorial Part 1:
+This is the code for the Django Tutorial:
 
-  Add polls view.   Then add response into polls/views.py.   Add polls/urls.py and then adjust
-  mysite/urls.py so the new project is visible.
+https://docs.djangoproject.com/en/2.2/intro/tutorial01/
 
-  To run the server:
-  python manage.py runserver
+I have added some notes on the tutorial.   The localhost website does not produce a usable website
+when the server is run.   You need to test the site using links similar to the following:
 
-  To view the polls, go to:
-  http://localhost:8000/polls/
+  - http://localhost:8000/polls/
+  - http://localhost:8000/admin/
+  - http://localhost:8000/polls/1/
+  - http://localhost:8000/polls/1/results/
+  - http://localhost:8000/polls/1/vote/
+  - http://localhost:8000/polls/5/                # Should produce an error.
 
-Tutorial Part 2:
-
-  We created some models and migrated those onto the database.
-
-  We used the command line shell tool to add questions into the database and choices.
-
-  We ensured the questions were visible in the admin site and could be changed.
-
-  Key sites are:
-    http://localhost:8000/polls/
-    http://localhost:8000/admin/
-
-  KEY POINT: From this point onwards, if the database doesn't exists, I may need to migrate the models to set everything up.   This may be relevant for testing on windows and linux etc.
+I have not completed the advanced tutorial, which is about packaging the Django app.

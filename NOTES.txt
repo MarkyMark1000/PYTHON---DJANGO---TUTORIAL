@@ -182,4 +182,14 @@ DJANGO APP, PART 7:
       so that it knows where to look for templates.   We then copy a django core template from under the django
       directory structure into this directory and edit it so that id displays our site details instead.
 
+ADVANCED TUTORIAL:
 
+    - This part is about converting the polls app into a package that can be shared on PIP.
+    - I DID NOT COMPLETE THIS.
+    - However, what is interesting is how it highlighted some reusable packages that can be downloaded
+      and reused:
+      - https://djangopackages.org
+    
+    - There is an interesting bit about using an alternative documentation tool for converting text files 
+      into html, called sphinx.
+      - https://docs.djangoproject.com/en/2.2/intro/whatsnext/

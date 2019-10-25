@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>DJANGO TUTORIAL</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="django-tutorial">
+<h1 class="title">DJANGO TUTORIAL</h1>
+
+<div class="section" id="overview">
+<h1>Overview</h1>
+<div class="section" id="tutorial">
+<h2>Tutorial</h2>
+<p>This project is based upon the Django tutorial in the following location:</p>
+<blockquote>
+<a class="reference external" href="https://docs.djangoproject.com/en/2.2/intro/tutorial01/">https://docs.djangoproject.com/en/2.2/intro/tutorial01/</a></blockquote>
+<p>The tutorial is pretty limited, but a good introduction into building Django Apps, the
+admin site and using the shell to analyse the model characteristics.</p>
+</div>
+<div class="section" id="warning">
+<h2>Warning:</h2>
+<p>In a similar manner to Flask, there is a default value for SECRET_KEY should be changed to some
+random bytes in production.</p>
+<blockquote>
+<p>python -c 'import os; print(os.urandom(16))'</p>
+<p>b'_5#y2L&quot;F4Q8znxec]/'</p>
+</blockquote>
+</div>
+</div>
+<div class="section" id="installation-guide">
+<h1>Installation Guide</h1>
+<div class="section" id="manual-installation">
+<h2>Manual Installation</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>If it exists, remove the venv virtual environment directory using the following:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rm <span class="pre">-rf</span> venv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (mac)</tt></li>
+<li><tt class="docutils literal">rmdir venv /s&nbsp;&nbsp;&nbsp; (windows)</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Recreate the virtual environment directory using the following:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">virtualenv <span class="pre">--no-site-packages</span> <span class="pre">-p</span> python3 venv</tt></li>
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">pip install <span class="pre">-r</span> requirements.txt</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">virtualenv <span class="pre">--no-site-packages</span> <span class="pre">-p</span> python venv</tt></li>
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">pip install <span class="pre">-r</span> requirements.txt</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Make model migrations:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">python manage.py makemigrations polls</tt></li>
+<li><tt class="docutils literal">python manage.py check</tt></li>
+<li><tt class="docutils literal">python manage.py migrate</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">python manage.py makemigrations polls</tt></li>
+<li><tt class="docutils literal">python manage.py check</tt></li>
+<li><tt class="docutils literal">python manage.py migrate</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>You can setup a superuser account for the admin part of the Django polls app using the following:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">python manage.py createsuperuser</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">python manage.py createsuperuser</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If necessary, the html document in the docs directory can be rebuilt using:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rm <span class="pre">-rf</span> <span class="pre">./docs/*.html</span></tt></li>
+<li><tt class="docutils literal">rst2html ./docs/index.rst ./docs/index.html</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">del <span class="pre">.\docs\*.html</span></tt></li>
+<li><tt class="docutils literal">rst2html.py .\docs\index.rst .\docs\index.html</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="makefile-installation-mac-linux-or-unix">
+<h2>MakeFile Installation (Mac, Linux or Unix)</h2>
+<p>This project was written and tested on a mac and it has not been tested on Linux.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>To get help:</dt>
+<dd><ul class="first last">
+<li>Run 'make' or 'make help' to get help on this project.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>It is sensible to reset the virtual environment so that it reflects the current requirements.txt file:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv' to build the virtual environment from requirements.txt.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The first time that this project is installed, or when model changes are made:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv-migrations' to migrate models.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To create a superuser for the admin site:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv-admin'</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>There isn't much supporting documentation, but it can be rebuilt using the following:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv-docs' to build /docs/index.html</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="running-the-application">
+<h1>Running the Application</h1>
+<div class="section" id="manual">
+<h2>Manual</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>To run the app using the normal environment:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">python manage.py runserver</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">python manage.py runserver</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Please note that the standard localhost is not a valid website that produces html.   You will need to use:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal"><span class="pre">http://localhost/polls/</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">http://localhost/admin/</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="makefile">
+<h2>MakeFile</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>To run the Django site:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv-run'</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="testing-the-application">
+<h1>Testing the Application</h1>
+<div class="section" id="id1">
+<h2>Manual</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Depending upon if new packages have been installed and if you wish to keep them in the project, it may be worth rebuilding the virtual environment and requirements.txt file to ensure they are consistent:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>To throw away any new packages and recreate the venv virtual environment from the requirements.txt file:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rm <span class="pre">-rf</span> venv</tt></li>
+<li><tt class="docutils literal">virtualenv <span class="pre">--no-site-packages</span> <span class="pre">-p</span> python3 venv</tt></li>
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">pip install <span class="pre">-r</span> requirements.txt</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rmdir venv /s</tt></li>
+<li><tt class="docutils literal">virtualenv <span class="pre">--no-site-packages</span> <span class="pre">-p</span> python venv</tt></li>
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">pip install <span class="pre">-r</span> requirements.txt</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To recreate the requirements.txt file from the current venv virtual environment:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rm <span class="pre">-rf</span> requirements.txt</tt></li>
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">pip freeze &gt; requirements.txt</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">del requirements.txt</tt></li>
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">pip freeze &gt; requirements.txt</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To run a basic test:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">python manage.py test polls</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">python manage.py test polls</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>MakeFile</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Depending upon if new packages have been installed and if you wish to keep them in the project, it may be worth rebuilding the virtual environment and requirements.txt file to ensure they are consistent:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>To throw away any new packages and recreate the venv virtual environment from the requirements.txt file:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv' to build a new venv environment from existing requirements.txt file.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To recreate the requirements.txt file from the current venv virtual environment:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv-build-req' to build a new requirements.txt file from existing venv environment.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To run a basic test:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv-test' to run test in venv virtual environment.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="test-coding-standards">
+<h1>Test Coding Standards</h1>
+<div class="section" id="id3">
+<h2>Manual</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Test the code within the mysite directory:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">pycodestyle <span class="pre">--statistics</span> <span class="pre">./mysite/*.py</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">pycodestyle <span class="pre">--statistics</span> filename.py</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Test the code within the polls directory:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">source venv/bin/activate</tt></li>
+<li><tt class="docutils literal">pycodestyle <span class="pre">--statistics</span> <span class="pre">./polls/*.py</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
+<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
+<li><tt class="docutils literal">pycodestyle <span class="pre">--statistics</span> filename.py</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>MakeFile</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Test the code within the flaskr directory:</dt>
+<dd><ul class="first last">
+<li>Run 'make pystat-mysite'</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Test the code within the tests directory:</dt>
+<dd><ul class="first last">
+<li>Run 'make pystat-polls'</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="cleanup">
+<h1>Cleanup</h1>
+<div class="section" id="id5">
+<h2>Manual</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>The flaskr app can become cluttered with a number of directories and files.   The following can be used to clean them up:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mac:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rm <span class="pre">-rf</span> ./mysite/__pycache__*</tt></li>
+<li><tt class="docutils literal">rm <span class="pre">-rf</span> ./polls/__pycache__*</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Windows:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rmdir /S mysite\__pycache__</tt></li>
+<li><tt class="docutils literal">rmdir /S polls\__pycache__</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If you wish to remove the venv virtual environment directory:</dt>
+<dd><ul class="first last">
+<li><tt class="docutils literal">rm <span class="pre">-rf</span> venv</tt></li>
+<li><tt class="docutils literal">rmdir /S venv</tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>MakeFile</h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>To clean files such as pytest_cache, dist etc:</dt>
+<dd><ul class="first last">
+<li>Run 'make venv-clean'</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If you wish to remove the venv virtual environment directory:</dt>
+<dd><ul class="first last">
+<li>Run 'make clean-venv'</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="distribution">
+<h1>Distribution</h1>
+</div>
+</div>
+</body>
+</html>
