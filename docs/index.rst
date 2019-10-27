@@ -68,13 +68,6 @@ Manual Installation
         - ``deactivate or source deactivate``
         - ``.\venv\Scripts\activate``
         - ``python manage.py createsuperuser``
-- If necessary, the html document in the docs directory can be rebuilt using:
-    - Mac:
-        - ``rm -rf ./docs/*.html``
-        - ``rst2html ./docs/index.rst ./docs/index.html``
-    - Windows:
-        - ``del .\docs\*.html``
-        - ``rst2html.py .\docs\index.rst .\docs\index.html``
 
 
 MakeFile Installation (Mac, Linux or Unix)
@@ -82,15 +75,13 @@ MakeFile Installation (Mac, Linux or Unix)
 This project was written and tested on a mac and it has not been tested on Linux.
 
 - To get help:
-    - Run 'make' or 'make help' to get help on this project.
+    - Run 'make' to get help on this project.
 - It is sensible to reset the virtual environment so that it reflects the current requirements.txt file:
     - Run 'make venv' to build the virtual environment from requirements.txt.
 - The first time that this project is installed, or when model changes are made:
     - Run 'make venv-migrations' to migrate models.
 - To create a superuser for the admin site:
     - Run 'make venv-admin'
-- There isn't much supporting documentation, but it can be rebuilt using the following:
-    - Run 'make venv-docs' to build /docs/index.html
 
     
 Running the Application
@@ -124,32 +115,6 @@ Testing the Application
 Manual
 ------
 
-- Depending upon if new packages have been installed and if you wish to keep them in the project, it may be worth rebuilding the virtual environment and requirements.txt file to ensure they are consistent:
-    - To throw away any new packages and recreate the venv virtual environment from the requirements.txt file:
-        - Mac:
-            - ``rm -rf venv``
-            - ``virtualenv --no-site-packages -p python3 venv``
-            - ``deactivate or source deactivate``
-            - ``source venv/bin/activate``
-            - ``pip install -r requirements.txt``
-        - Windows:
-            - ``rmdir venv /s``
-            - ``virtualenv --no-site-packages -p python venv``
-            - ``deactivate or source deactivate``
-            - ``.\venv\Scripts\activate``
-            - ``pip install -r requirements.txt``
-    - To recreate the requirements.txt file from the current venv virtual environment:
-        - Mac:
-            - ``rm -rf requirements.txt``
-            - ``deactivate or source deactivate``
-            - ``source venv/bin/activate``
-            - ``pip freeze > requirements.txt``
-        - Windows:
-            - ``del requirements.txt``
-            - ``deactivate or source deactivate``
-            - ``.\venv\Scripts\activate``
-            - ``pip freeze > requirements.txt``
-
 - To run a basic test:
     - Mac:
         - ``deactivate or source deactivate``
@@ -162,12 +127,6 @@ Manual
 
 MakeFile
 --------
-
-- Depending upon if new packages have been installed and if you wish to keep them in the project, it may be worth rebuilding the virtual environment and requirements.txt file to ensure they are consistent:
-    - To throw away any new packages and recreate the venv virtual environment from the requirements.txt file:
-        - Run 'make venv' to build a new venv environment from existing requirements.txt file.
-    - To recreate the requirements.txt file from the current venv virtual environment:
-        - Run 'make venv-build-req' to build a new requirements.txt file from existing venv environment.
 
 - To run a basic test:
     - Run 'make venv-test' to run test in venv virtual environment.

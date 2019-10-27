@@ -484,31 +484,6 @@ random bytes in production.</p>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>If necessary, the html document in the docs directory can be rebuilt using:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Mac:</dt>
-<dd><ul class="first last">
-<li><tt class="docutils literal">rm <span class="pre">-rf</span> <span class="pre">./docs/*.html</span></tt></li>
-<li><tt class="docutils literal">rst2html ./docs/index.rst ./docs/index.html</tt></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Windows:</dt>
-<dd><ul class="first last">
-<li><tt class="docutils literal">del <span class="pre">.\docs\*.html</span></tt></li>
-<li><tt class="docutils literal">rst2html.py .\docs\index.rst .\docs\index.html</tt></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
 </ul>
 </div>
 <div class="section" id="makefile-installation-mac-linux-or-unix">
@@ -518,7 +493,7 @@ random bytes in production.</p>
 <li><dl class="first docutils">
 <dt>To get help:</dt>
 <dd><ul class="first last">
-<li>Run 'make' or 'make help' to get help on this project.</li>
+<li>Run 'make' to get help on this project.</li>
 </ul>
 </dd>
 </dl>
@@ -543,14 +518,6 @@ random bytes in production.</p>
 <dt>To create a superuser for the admin site:</dt>
 <dd><ul class="first last">
 <li>Run 'make venv-admin'</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>There isn't much supporting documentation, but it can be rebuilt using the following:</dt>
-<dd><ul class="first last">
-<li>Run 'make venv-docs' to build /docs/index.html</li>
 </ul>
 </dd>
 </dl>
@@ -621,73 +588,6 @@ random bytes in production.</p>
 <h2>Manual</h2>
 <ul class="simple">
 <li><dl class="first docutils">
-<dt>Depending upon if new packages have been installed and if you wish to keep them in the project, it may be worth rebuilding the virtual environment and requirements.txt file to ensure they are consistent:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>To throw away any new packages and recreate the venv virtual environment from the requirements.txt file:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Mac:</dt>
-<dd><ul class="first last">
-<li><tt class="docutils literal">rm <span class="pre">-rf</span> venv</tt></li>
-<li><tt class="docutils literal">virtualenv <span class="pre">--no-site-packages</span> <span class="pre">-p</span> python3 venv</tt></li>
-<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
-<li><tt class="docutils literal">source venv/bin/activate</tt></li>
-<li><tt class="docutils literal">pip install <span class="pre">-r</span> requirements.txt</tt></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Windows:</dt>
-<dd><ul class="first last">
-<li><tt class="docutils literal">rmdir venv /s</tt></li>
-<li><tt class="docutils literal">virtualenv <span class="pre">--no-site-packages</span> <span class="pre">-p</span> python venv</tt></li>
-<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
-<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
-<li><tt class="docutils literal">pip install <span class="pre">-r</span> requirements.txt</tt></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>To recreate the requirements.txt file from the current venv virtual environment:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Mac:</dt>
-<dd><ul class="first last">
-<li><tt class="docutils literal">rm <span class="pre">-rf</span> requirements.txt</tt></li>
-<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
-<li><tt class="docutils literal">source venv/bin/activate</tt></li>
-<li><tt class="docutils literal">pip freeze &gt; requirements.txt</tt></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Windows:</dt>
-<dd><ul class="first last">
-<li><tt class="docutils literal">del requirements.txt</tt></li>
-<li><tt class="docutils literal">deactivate or source deactivate</tt></li>
-<li><tt class="docutils literal">.\venv\Scripts\activate</tt></li>
-<li><tt class="docutils literal">pip freeze &gt; requirements.txt</tt></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
 <dt>To run a basic test:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
@@ -719,29 +619,6 @@ random bytes in production.</p>
 <div class="section" id="id2">
 <h2>MakeFile</h2>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Depending upon if new packages have been installed and if you wish to keep them in the project, it may be worth rebuilding the virtual environment and requirements.txt file to ensure they are consistent:</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>To throw away any new packages and recreate the venv virtual environment from the requirements.txt file:</dt>
-<dd><ul class="first last">
-<li>Run 'make venv' to build a new venv environment from existing requirements.txt file.</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>To recreate the requirements.txt file from the current venv virtual environment:</dt>
-<dd><ul class="first last">
-<li>Run 'make venv-build-req' to build a new requirements.txt file from existing venv environment.</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
 <li><dl class="first docutils">
 <dt>To run a basic test:</dt>
 <dd><ul class="first last">
